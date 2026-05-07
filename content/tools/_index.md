@@ -1,6 +1,7 @@
 ---
 title: "ツール"
-description: "使い道が分からないツール"
+description: "ここはツールです"
 cascade:
   showReadingTime: false
 ---
+使い道が分からないツール
