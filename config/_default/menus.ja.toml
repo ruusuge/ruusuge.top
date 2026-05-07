@@ -17,6 +17,7 @@
 
 [[main]]
   name = "Tools"
+  pageRef = "tools"
   weight = 10
 
 #[[main]]
