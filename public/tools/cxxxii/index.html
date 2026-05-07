@@ -275,11 +275,19 @@
 
 
 
+  
+    
+  
 
 
 
 
 
+
+
+  
+    
+  
 
 
 
@@ -486,6 +494,122 @@
   <article>
     
     
+      
+      
+      
+      
+        
+
+
+
+
+
+
+
+
+  
+  
+    
+    
+  
+
+
+
+
+
+
+  
+    
+    
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+
+
+
+
+  
+    
+    
+      
+      
+    
+  
+
+
+
+
+
+
+  <div class="overflow-hidden rounded-md h-36 md:h-56 lg:h-72 nozoom">
+    <img
+      src="/tools/cxxxii/feature_hu_5380a9e306dfb698.png"
+      role="presentation"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="w-full h-full nozoom object-cover"
+      >
+  </div>
+
+
+
+<div class="single_hero_background nozoom fixed inset-x-0 top-0 h-[800px]">
+  
+    
+    
+    
+    <img
+      id="background-image-main"
+      src="/img/background.svg"
+      role="presentation"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover"
+      >
+  
+  <div
+    class="from-neutral absolute inset-0 bg-gradient-to-t to-transparent mix-blend-normal dark:from-neutral-800"></div>
+  <div
+    class="from-neutral to-neutral absolute inset-0 bg-gradient-to-t opacity-30 mix-blend-normal dark:from-neutral-800 dark:to-neutral-800 dark:opacity-60"></div>
+</div>
+
+
+  <div
+    id="background-blur"
+    class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-xl bg-neutral-100/75 dark:bg-neutral-800/60"></div>
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/background-blur.min.605b3b942818f0ab5a717ae446135ec46b8ee5a2ad12ae56fb90dc2a76ce30c388f9fec8bcc18db15bd47e3fa8a09d779fa12aa9c184cf614a315bc72c6c163d.js"
+    integrity="sha512-YFs7lCgY8KtacXrkRhNexGuO5aKtEq5W&#43;5DcKnbOMMOI&#43;f7IvMGNsVvUfj&#43;ooJ13n6EqqcGEz2FKMVvHLGwWPQ=="
+    data-blur-id="background-blur"
+    data-image-id="background-image-main"
+    data-image-url="/img/background.svg"></script>
+
+
+      
+    
 
     
     <header id="single_header" class="mt-5 max-w-prose">
@@ -516,8 +640,6 @@
   
 
   
-    
-  
 
   
 
@@ -525,8 +647,6 @@
     
   
 
-  
-    
   
 
   
@@ -543,7 +663,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 1月 0001</time><span class="px-2 text-primary-500">&middot;</span><span>9 文字</span><span class="px-2 text-primary-500">&middot;</span><span title="読むのに必要な時間">1 分</span>
+      <span>9 文字</span>
     
 
     
@@ -850,7 +970,7 @@
 </style>
 <div class="cxxxii-container">
   <div class="input-section">
-    <label for="textInput">テキストを入力してください</label>
+    <label for="textInput">テキスト</label>
     <textarea id="textInput" placeholder="（A-Z、0-9、Ⅰ、Ⅱ、Ⅲに対応）"></textarea>
   </div>
   <div class="preview-section">
@@ -859,16 +979,16 @@
     <div id="statusMessage" class="status-message"></div>
   </div>
   <div class="controls">
-    <button id="generateBtn" class="button button-primary">画像を生成</button>
+    <button id="generateBtn" class="button button-primary">生成</button>
     <div class="scale-options">
-      <label for="scaleSelect">画像を拡大:</label>
+      <label for="scaleSelect">拡大:</label>
       <select id="scaleSelect">
         <option value="1">1x</option>
         <option value="2">2x</option>
         <option value="4">4x</option>
         <option value="8">8x</option>
       </select>
-      <button id="downloadBtn" class="button button-secondary" disabled>画像をダウンロード</button>
+      <button id="downloadBtn" class="button button-secondary" disabled>ダウンロード</button>
     </div>
   </div>
 </div>
@@ -954,7 +1074,7 @@
     }
 
     if (!fontImage) {
-      showStatus('フォントがまだ読み込まれていません！', 'error');
+      showStatus('フォントが読み込まれていません！', 'error');
       return;
     }
 
