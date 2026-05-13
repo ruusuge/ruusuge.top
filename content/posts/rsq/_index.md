@@ -5,8 +5,8 @@ description: "解説します~~~発表します~~~"
 
 ## Q1
 
-![Q1](img/01.png)
-![Q1A](img/01_.png)
+![Q1](img/rsq/01.png)
+![Q1A](img/rsq/01_.png)
 
 一見簡単そうに見えますが、これはひっかけ問題です！
 もし答えが違天だと、並び順が逆になってしまいます。
@@ -16,8 +16,8 @@ description: "解説します~~~発表します~~~"
 
 ## Q2
 
-![Q2](img/02.png)
-![Q2A](img/02_.png)
+![Q2](img/rsq/02.png)
+![Q2A](img/rsq/02_.png)
 
 ヒントがたくさんあったので、
 多くの人が正解すると思っていましたが、
@@ -27,8 +27,8 @@ description: "解説します~~~発表します~~~"
 
 ## Q3
 
-![Q3](img/03.png)
-![Q3A](img/03_.png)
+![Q3](img/rsq/03.png)
+![Q3A](img/rsq/03_.png)
 
 かなり難しい問題で、
 非常に強い連想力が必要です。
@@ -37,16 +37,16 @@ description: "解説します~~~発表します~~~"
 
 ## Q4
 
-![Q4](img/04.png)
-![Q4A](img/04_.png)
+![Q4](img/rsq/04.png)
+![Q4A](img/rsq/04_.png)
 
 もし以前に参加したことがあるなら、
 この問題はとても簡単です。
 
 ## Q5
 
-![Q5](img/05.png)
-![Q5A](img/05_.png)
+![Q5](img/rsq/05.png)
+![Q5A](img/rsq/05_.png)
 
 ソートしても多くのキーワードが見つかるので、
 実はそれほど難しくありません。
@@ -55,8 +55,8 @@ description: "解説します~~~発表します~~~"
 
 ## Q6
 
-![Q6](img/06.png)
-![Q6A](img/06_.png)
+![Q6](img/rsq/06.png)
+![Q6A](img/rsq/06_.png)
 
 「2つの楽曲に登場する場所」について、考える必要があります。
 画像をモノクロ化したため、それでもかなり難しいです。
@@ -64,22 +64,22 @@ description: "解説します~~~発表します~~~"
 
 ## Q7
 
-![Q7](img/07.png)
-![Q7A](img/07_.png)
+![Q7](img/rsq/07.png)
+![Q7A](img/rsq/07_.png)
 
 記事は[ここから](https://note.com/shimi_comi/n/n1b0f4db8c6aa "ここから")。
 わざわざ2つの絵文字を残しました。😎
 
 ## Q8
 
-![Q8](img/08.png)
-![Q8A](img/08_.png)
+![Q8](img/rsq/08.png)
+![Q8A](img/rsq/08_.png)
 
 ランキングは[ここから](https://note.com/didymium/n/n7c8124caef88 "ここから")。
 予想とは異なり、正答率はかなり高かった。
 
 ## 結果発表
 
-![結果発表](img/00__.png)
+![結果発表](img/rsq/00__.png)
 
 みなさんのご参加ありがとうございました！
