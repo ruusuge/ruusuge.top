@@ -64,8 +64,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 
 [article]
   showDate = true
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
@@ -137,13 +137,13 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
   cardViewScreenWidth = false
 
 [firebase]
-  # apiKey = "XXXXXX"
-  # authDomain = "XXXXXX"
-  # projectId = "XXXXXX"
-  # storageBucket = "XXXXXX"
-  # messagingSenderId = "XXXXXX"
-  # appId = "XXXXXX"
-  # measurementId = "XXXXXX"
+  # apiKey = "AIzaSyCXVeTXPxTOPIYd_dWoE9lwqNwMdNMiG18"
+  # authDomain = "blowfish-e4805.firebaseapp.com"
+  # projectId = "blowfish-e4805"
+  # storageBucket = "blowfish-e4805.firebasestorage.app"
+  # messagingSenderId = "364700759917"
+  # appId = "1:364700759917:web:1a3e99c6f9c30d07ea8c64"
+  # measurementId = "G-CNJSH7L6ZW"
 
 [fathomAnalytics]
   # site = "ABC12345"
