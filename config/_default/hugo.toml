@@ -40,6 +40,10 @@ googleAnalytics = "G-CNJSH7L6ZW"
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[services]
+  [services.disqus]
+    shortname = 'ruusuge'
+
 [related]
   threshold = 0
   toLower = false
