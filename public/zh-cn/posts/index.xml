@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>文章 on ルース毛</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in 文章 on ルース毛</description>
+    <title>ブログ on ルース毛</title>
+    <link>http://localhost:1313/zh-cn/posts/</link>
+    <description>Recent content in ブログ on ルース毛</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>zh-cn</language>
     <managingEditor>justlouis0213@gmail.com (ルース毛)</managingEditor>
     <webMaster>justlouis0213@gmail.com (ルース毛)</webMaster>
     <copyright>© 2026- ルース毛</copyright>
-    <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ルースQ　解説&amp;結果発表</title>
-      <link>http://localhost:1313/posts/rsq/</link>
+      <link>http://localhost:1313/zh-cn/posts/rsq/</link>
       <pubDate>Wed, 13 May 2026 00:00:00 +0000</pubDate>
       <author>justlouis0213@gmail.com (ルース毛)</author>
-      <guid>http://localhost:1313/posts/rsq/</guid>
+      <guid>http://localhost:1313/zh-cn/posts/rsq/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/rsq/feature.png" />
     </item>
