@@ -1,8 +1,8 @@
 ---
-title: "ブログ"
-description: "文章が書けません…"
+title: "文章"
+description: "我不会写文章…"
 cascade:
     showTableOfContents: true
     showReadingTime: false
 ---
-いつか書くかもしれません
+总有一天会写一点的
