@@ -1,6 +1,7 @@
 ---
 title: "ブログ"
 description: "文章が書けません…"
-showTableOfContents: true
+cascade:
+    showTableOfContents: true
 ---
 いつか書くかもしれません
