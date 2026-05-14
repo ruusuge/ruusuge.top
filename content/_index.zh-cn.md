@@ -38,4 +38,4 @@ cascade:
 [![tnot.top](img/link/tnot.png)](https://tnot.top)
 [![omega98.top](img/link/omega98.png)](https://omega98.top)
 [![omega98.com](img/link/furcht968.png)](https://furcht968.com)
-[![nakanoin.page](img/link/nakanoin.png)](https://furcht968.page)
+[![nakanoin.page](img/link/nakanoin.png)](https://nakanoin.page)
