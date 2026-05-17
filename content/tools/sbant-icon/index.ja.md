@@ -1,11 +1,13 @@
 ---
-title: "すべあなアイコン生成ツール"
+title: "すべ貴方アイコン生成ツール"
 date: 2026-05-17
-description: "色をカスタマイズできるすべあなアイコン生成ツール"
+description: "色と文字をカスタマイズできるすべ貴方のアイコン生成ツール"
 ---
 
 <style>
-  .sban-container {
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+  .sbant-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -13,26 +15,27 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     margin: 0 auto;
   }
 
-  .color-section {
+  .input-section {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
   }
 
-  .color-input {
+  .input-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
   }
 
-  .color-input label {
+  .input-group label {
     font-weight: bold;
     font-size: 1.1em;
   }
 
-  .color-input input[type="color"] {
+  .input-group input[type="color"] {
     width: 60px;
     height: 40px;
     border: 2px solid #666;
@@ -46,6 +49,23 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     font-family: monospace;
     font-size: 13px;
     color: #aaa;
+  }
+
+  .input-group input[type="text"] {
+    width: 60px;
+    height: 42px;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid #666;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .input-group input[type="text"]:focus {
+    border-color: #4CAF50;
   }
 
   .preview-section {
@@ -76,15 +96,6 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     font-size: 14px;
     font-weight: bold;
     transition: all 0.3s ease;
-  }
-
-  .button-primary {
-    background-color: #4CAF50;
-    color: white;
-  }
-
-  .button-primary:hover {
-    background-color: #45a049;
   }
 
   .button-secondary {
@@ -139,17 +150,16 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
   }
 </style>
 
-<div class="sban-container">
-  <div class="color-section">
-    <div class="color-input">
+<div class="sbant-container">
+  <div class="input-section">
+    <div class="input-group">
       <label for="bgColor">背景色</label>
       <input type="color" id="bgColor" value="#0288D1">
       <span id="bgColorVal" class="color-value">#0288D1</span>
     </div>
-    <div class="color-input">
-      <label for="iconColor">アイコン色</label>
-      <input type="color" id="iconColor" value="#B2DBF1">
-      <span id="iconColorVal" class="color-value">#B2DBF1</span>
+    <div class="input-group">
+      <label for="charInput">文字</label>
+      <input type="text" id="charInput" maxlength="1" placeholder="字">
     </div>
   </div>
 
@@ -174,17 +184,13 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
 
 <script>
   const bgColorInput = document.getElementById('bgColor');
-  const iconColorInput = document.getElementById('iconColor');
   const bgColorVal = document.getElementById('bgColorVal');
-  const iconColorVal = document.getElementById('iconColorVal');
+  const charInput = document.getElementById('charInput');
   const previewCanvas = document.getElementById('previewCanvas');
   const previewCtx = previewCanvas.getContext('2d');
   const statusMessage = document.getElementById('statusMessage');
   const scaleSelect = document.getElementById('scaleSelect');
   const downloadBtn = document.getElementById('downloadBtn');
-
-  let svgTemplate = null;
-  let iconImage = null;
 
   function showStatus(message, type = 'info') {
     if (!message) {
@@ -195,55 +201,24 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     statusMessage.className = 'status-message status-' + type + ' visible';
   }
 
-  async function loadSvgTemplate() {
-    try {
-      const response = await fetch('/img/unnamed.svg');
-      svgTemplate = await response.text();
-      showStatus('SVG読み込み成功', 'success');
-    } catch (err) {
-      showStatus('SVG読み込み失敗: ' + err.message, 'error');
-    }
-  }
-
-  function loadColoredIcon(color) {
-    return new Promise((resolve, reject) => {
-      if (!svgTemplate) {
-        reject(new Error('SVGテンプレートが読み込まれていません'));
-        return;
-      }
-      const coloredSvg = svgTemplate.replace(/fill="currentColor"/g, 'fill="' + color + '"');
-      const blob = new Blob([coloredSvg], { type: 'image/svg+xml' });
-      const url = URL.createObjectURL(blob);
-      const img = new Image();
-      img.onload = () => {
-        URL.revokeObjectURL(url);
-        resolve(img);
-      };
-      img.onerror = () => {
-        URL.revokeObjectURL(url);
-        reject(new Error('アイコンの描画に失敗しました'));
-      };
-      img.src = url;
-    });
-  }
-
-  async function render() {
+  function render() {
     const bgColor = bgColorInput.value;
-    const iconColor = iconColorInput.value;
+    const char = charInput.value.charAt(0);
 
     bgColorVal.textContent = bgColor;
-    iconColorVal.textContent = iconColor;
 
     previewCtx.fillStyle = bgColor;
     previewCtx.fillRect(0, 0, 500, 500);
 
-    try {
-      iconImage = await loadColoredIcon(iconColor);
-      previewCtx.drawImage(iconImage, 0, 0, 500, 500);
-      showStatus('', 'info');
-    } catch (err) {
-      showStatus(err.message, 'error');
+    if (char) {
+      previewCtx.fillStyle = '#FFFFFF';
+      previewCtx.font = '212px "Noto Sans JP", sans-serif';
+      previewCtx.textAlign = 'center';
+      previewCtx.textBaseline = 'middle';
+      previewCtx.fillText(char, 250, 250);
     }
+
+    showStatus('');
   }
 
   function downloadImage(scale) {
@@ -259,15 +234,20 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     tempCtx.fillStyle = bgColorInput.value;
     tempCtx.fillRect(0, 0, canvasWidth, canvasHeight);
 
-    if (iconImage) {
-      tempCtx.drawImage(iconImage, 0, 0, canvasWidth, canvasHeight);
+    const char = charInput.value.charAt(0);
+    if (char) {
+      tempCtx.fillStyle = '#FFFFFF';
+      tempCtx.font = (212 * scale) + 'px "Noto Sans JP", sans-serif';
+      tempCtx.textAlign = 'center';
+      tempCtx.textBaseline = 'middle';
+      tempCtx.fillText(char, canvasWidth / 2, canvasHeight / 2);
     }
 
     tempCanvas.toBlob(blob => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'sban-icon-' + scale + 'x-' + Date.now() + '.png';
+      link.download = 'sbant-icon-' + scale + 'x-' + Date.now() + '.png';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -276,12 +256,18 @@ description: "色をカスタマイズできるすべあなアイコン生成ツ
     });
   }
 
+  charInput.addEventListener('input', () => {
+    if (charInput.value.length > 1) {
+      charInput.value = charInput.value.charAt(0);
+    }
+    render();
+  });
+
   bgColorInput.addEventListener('input', render);
-  iconColorInput.addEventListener('input', render);
   downloadBtn.addEventListener('click', () => {
     const scale = parseInt(scaleSelect.value);
     downloadImage(scale);
   });
 
-  loadSvgTemplate().then(() => render());
+  render();
 </script>
