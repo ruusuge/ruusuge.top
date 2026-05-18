@@ -3,22 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/tools/sbant-icon/</loc>
-    <lastmod>2026-05-17T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-cn"
-      href="http://localhost:1313/zh-cn/tools/sbant-icon/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="ja"
-      href="http://localhost:1313/tools/sbant-icon/"
-    />
-  </url>
-  <url>
     <loc>http://localhost:1313/tools/</loc>
     <lastmod>2026-05-17T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -64,6 +48,22 @@
       rel="alternate"
       hreflang="ja"
       href="http://localhost:1313/tools/sban-icon/"
+    />
+  </url>
+  <url>
+    <loc>http://localhost:1313/tools/sbant-icon/</loc>
+    <lastmod>2026-05-17T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="http://localhost:1313/zh-cn/tools/sbant-icon/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="ja"
+      href="http://localhost:1313/tools/sbant-icon/"
     />
   </url>
   <url>
