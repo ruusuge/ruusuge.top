@@ -1,0 +1,19 @@
+<!DOCTYPE html><canvas id="c" width="500" height="500"></canvas>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var bg=fix(p.get('bg'))||'#0288D1';
+  var ic=fix(p.get('icon'))||'#B2DBF1';
+  var s=Math.min(8,Math.max(1,+p.get('scale')||4));
+  var dl=p.get('dl')==='1';
+  function fix(v){if(!v)return null;v=decodeURIComponent(v);if(v[0]!=='#')v='#'+v;return /^#[0-9a-fA-F]{6}$/.test(v)?v:null;}
+  var cx=document.getElementById('c').getContext('2d');
+  cx.fillStyle=bg;cx.fillRect(0,0,500,500);
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500"><g fill="none" fill-rule="evenodd"><circle fill="currentColor" cx="250.1" cy="198" r="78.5"/><path fill="currentColor" d="M411.7,399.5c0-45.3-72.3-82-161.5-82s-161.5,36.7-161.5,82h-0.2V500h323.2L411.7,399.5L411.7,399.5L411.7,399.5z"/></g></svg>';
+  var blob=new Blob([svg.replace(/fill="currentColor"/g,'fill="'+ic+'"')],{type:'image/svg+xml'});
+  var img=new Image();
+  img.onload=function(){URL.revokeObjectURL(url);cx.drawImage(img,0,0,500,500);if(dl)down(s);};
+  var url=URL.createObjectURL(blob);img.src=url;
+  function down(sc){var w=500*sc,h=500*sc,tc=document.createElement('canvas');tc.width=w;tc.height=h;var tx=tc.getContext('2d');tx.drawImage(document.getElementById('c'),0,0,w,h);tc.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sban-icon-'+sc+'x-'+Date.now()+'.png';a.click();});}
+})();
+</script>

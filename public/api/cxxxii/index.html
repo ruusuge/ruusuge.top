@@ -1,0 +1,27 @@
+<!DOCTYPE html><canvas id="c" width="500" height="500"></canvas>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var text=(p.get('text')||'').replace(/\\n/g,'\n');
+  var s=Math.min(8,Math.max(1,+p.get('scale')||4));
+  var dl=p.get('dl')==='1';
+  var cx=document.getElementById('c').getContext('2d');
+  cx.fillStyle='#1a1a1a';cx.fillRect(0,0,500,500);
+  if(!text.trim())return;
+  var img=new Image();
+  img.src='/img/CXXXII.png';
+  img.onload=function(){
+    var cs='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ⅠⅡⅢ ';
+    var cw=10,ch=10,cols=text.split('\n');
+    var maxH=Math.max.apply(null,cols.map(function(c){return c.length;}))*ch;
+    var sy=Math.max(0,(500-maxH)/2),sx=Math.max(0,(500-cols.length*cw)/2);
+    cx.imageSmoothingEnabled=false;
+    cols.forEach(function(col,ci){col.split('').forEach(function(chr,ri){
+      var idx=cs.indexOf(chr.toUpperCase());if(idx===-1)return;
+      cx.drawImage(img,idx*cw,0,cw,ch,sx+(cols.length-1-ci)*cw,sy+ri*ch,cw,ch);
+    });});
+    if(dl)down(s);
+  };
+  function down(sc){var w=500*sc,h=500*sc,tc=document.createElement('canvas');tc.width=w;tc.height=h;var tx=tc.getContext('2d');tx.drawImage(document.getElementById('c'),0,0,w,h);tc.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='cxxxii-'+sc+'x-'+Date.now()+'.png';a.click();});}
+})();
+</script>

@@ -1,0 +1,35 @@
+{
+  "name": "图片生成 API",
+  "version": "1.0",
+  "endpoints": {
+    "/api/sban-icon/": {
+      "description": "全所为头像生成器",
+      "params": {
+        "bg":  { "type": "hex", "default": "0288D1", "desc": "背景色" },
+        "icon":{ "type": "hex", "default": "B2DBF1", "desc": "图标色" },
+        "scale":{ "type": "int", "default": 4, "values": [1,2,4,8], "desc": "缩放倍率" },
+        "dl":  { "type": "bool", "default": false, "desc": "设为1自动下载" }
+      },
+      "example": "/api/sban-icon/?bg=%230288D1&icon=%23FFFFFF&dl=1"
+    },
+    "/api/sbant-icon/": {
+      "description": "全贵方头像生成器",
+      "params": {
+        "bg":  { "type": "hex", "default": "0288D1", "desc": "背景色" },
+        "char":{ "type": "string", "required": true, "maxLength": 1, "desc": "单个文字" },
+        "scale":{ "type": "int", "default": 4, "values": [1,2,4,8], "desc": "缩放倍率" },
+        "dl":  { "type": "bool", "default": false, "desc": "设为1自动下载" }
+      },
+      "example": "/api/sbant-icon/?bg=%23FF5722&char=A&scale=8&dl=1"
+    },
+    "/api/cxxxii/": {
+      "description": "CXXXII 专辑封面生成",
+      "params": {
+        "text":{ "type": "string", "required": true, "desc": "文本，\\n 换行" },
+        "scale":{ "type": "int", "default": 4, "values": [1,2,4,8], "desc": "缩放倍率" },
+        "dl":  { "type": "bool", "default": false, "desc": "设为1自动下载" }
+      },
+      "example": "/api/cxxxii/?text=A%5CnBC%5CnDEF&dl=1"
+    }
+  }
+}

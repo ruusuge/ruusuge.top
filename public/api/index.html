@@ -1,0 +1,6 @@
+<!DOCTYPE html><pre id="j">Loading...</pre>
+<script>
+fetch('/api/docs.json').then(r=>r.json()).then(d=>{
+  document.getElementById('j').textContent=JSON.stringify(d,null,2);
+}).catch(()=>{document.getElementById('j').textContent='{"error":"failed to load"}';});
+</script>

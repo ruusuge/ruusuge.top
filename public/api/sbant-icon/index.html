@@ -1,0 +1,16 @@
+<!DOCTYPE html><canvas id="c" width="500" height="500"></canvas>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var bg=fix(p.get('bg'))||'#0288D1';
+  var ch=p.get('char');if(ch)ch=ch.charAt(0);
+  var s=Math.min(8,Math.max(1,+p.get('scale')||4));
+  var dl=p.get('dl')==='1';
+  function fix(v){if(!v)return null;v=decodeURIComponent(v);if(v[0]!=='#')v='#'+v;return /^#[0-9a-fA-F]{6}$/.test(v)?v:null;}
+  var cx=document.getElementById('c').getContext('2d');
+  cx.fillStyle=bg;cx.fillRect(0,0,500,500);
+  if(ch){cx.fillStyle='#FFFFFF';cx.font='212px sans-serif';cx.textAlign='center';cx.textBaseline='middle';cx.fillText(ch,250,250);}
+  if(dl)down(s);
+  function down(sc){var w=500*sc,h=500*sc,tc=document.createElement('canvas');tc.width=w;tc.height=h;var tx=tc.getContext('2d');tx.drawImage(document.getElementById('c'),0,0,w,h);tc.toBlob(function(b){var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='sbant-icon-'+sc+'x-'+Date.now()+'.png';a.click();});}
+})();
+</script>
