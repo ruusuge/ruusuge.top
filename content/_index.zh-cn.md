@@ -6,7 +6,7 @@ cascade:
 ---
 
 {{< alert icon="book" >}}
-<script src="quotes.js"></script>
+<script src="/js/quotes.js"></script>
 {{< /alert >}}
 
 <br><br><br><br><br><br><br>
@@ -43,3 +43,16 @@ cascade:
 [![omega98.top](img/link/omega98.png)](https://omega98.top)
 [![omega98.com](img/link/furcht968.png)](https://furcht968.com)
 [![nakanoin.page](img/link/nakanoin.png)](https://nakanoin.page)
+
+<br><br>
+
+<link rel="stylesheet" href="/css/passthem-btn.css">
+
+<div class="passthem-btn-wrapper">
+  <button id="passthemBtn" class="passthem-btn">
+    <span class="passthem-btn-label">Passthem的按钮</span>
+    <span id="passthemCount" class="passthem-btn-count">---</span>
+  </button>
+</div>
+
+<script src="/js/passthem-btn.js"></script>
