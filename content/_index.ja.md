@@ -5,7 +5,11 @@ cascade:
     
 ---
 
-<br><br><br><br><br><br><br><br>
+{{< alert icon="book" >}}
+<script src="quotes.js"></script>
+{{< /alert >}}
+
+<br><br><br><br><br><br><br>
 
 # 簡単な自己紹介
 
